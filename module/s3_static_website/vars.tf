@@ -54,3 +54,10 @@ variable "lambda_basic_policy_name" {
   description = "Policy name for lambda"
   default = "lambda_basic_policy"
 }
+
+variable "lambda_name" {
+  type    = string
+  description = "lambda name"
+  default = "poc_cf_lambda"
+}
+
