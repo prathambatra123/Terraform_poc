@@ -8,12 +8,12 @@ This code will create below resources:
 4) Lambda function to invalidate cache (Created lambda function in Python to invalidate cache to be able to get latest object as terraform do not have any function to invalidate cache in cloudfront.)
 5) IAM resources required for Lambda execution.
 
-Module have below required parameter values:
+Module have below required parameter values( to be updated in main.tf):
 
 1) bucket_name
 2) ACCOUNT_NUMBER (required creating IAM policies and roles for Lambda)
 
-Module has optional parameters:
+Module has optional parameters( to be updated in main.tf):
 1) region - Default set to us-east-1
 2) STAGE  - Default set to "dev"
 3) DEFAULT_TAGS  - Default set to CreatedBy = "Terraform",    STAGE = "prod",    Project     = "POC"
