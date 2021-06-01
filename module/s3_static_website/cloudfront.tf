@@ -1,5 +1,5 @@
 locals {
-  s3_origin_id = "myS3Origin"
+  s3_origin_id = var.s3_origin
 }
 
 resource "aws_cloudfront_origin_access_identity" "example" {
