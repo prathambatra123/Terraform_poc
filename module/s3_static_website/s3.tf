@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "poc_s3_bucket" {
   bucket = var.bucket_name
   acl    = "private"
-  tags = merge(map("Name", "POC${var.STAGE == "prod" ? "-prod" : ""}"), var.DEFAULT_TAGS)
+  tags = var.DEFAULT_TAGS
   
   server_side_encryption_configuration {
     rule {
@@ -53,10 +53,6 @@ lambda_function {
 lambda_function_arn = aws_lambda_function.poc_cf_lambda.arn
 events              = ["s3:ObjectCreated:*"]
 }
-depends_on = [
-    	aws_lambda_function.poc_cf_lambda,
-		aws_s3_bucket.poc_s3_bucket
-  ]
 
 }
 
