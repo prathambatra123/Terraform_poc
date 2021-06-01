@@ -1,5 +1,5 @@
 resource "aws_iam_role" "iam_for_lambda" {
-  name = "iam_for_lambda"
+  name = var.role_name
 
   assume_role_policy = <<EOF
 {
@@ -19,7 +19,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "lambda_basic_policy" {
-  name   = "lambda_basic_policy"
+  name   = var.lambda_basic_policy_name
   role   = aws_iam_role.iam_for_lambda.id
   policy = <<-EOF
 {
