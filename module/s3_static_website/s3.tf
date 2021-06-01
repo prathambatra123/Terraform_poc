@@ -38,6 +38,9 @@ data "aws_iam_policy_document" "s3_policy" {
       identifiers = [aws_cloudfront_origin_access_identity.example.iam_arn]
     }
   }
+   depends_on = [
+    aws_cloudfront_distribution.s3_distribution	
+  ]
   }
 
 resource "aws_s3_bucket_policy" "example_policy" {
